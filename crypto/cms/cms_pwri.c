@@ -193,7 +193,7 @@ CMS_RecipientInfo *CMS_add0_recipient_password(CMS_ContentInfo *cms,
 
 	/* Setup PBE algorithm */
 
-	pwri->keyDerivationAlgorithm = PKCS5_pbkdf2_set(iter, NULL, 0, -1, -1);
+	pwri->keyDerivationAlgorithm = PKCS5_pbkdf2_set(iter, NULL, 0, NID_hmacWithSHA256, -1);
 
 	if (!pwri->keyDerivationAlgorithm)
 		goto err;
